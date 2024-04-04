@@ -118,20 +118,20 @@ public:
 		set<int> tempStates;
 		tempStates.insert(finalStates.begin(), finalStates.end());
 		set<int> nextTempStates;
-		for (auto c : w2) //перебор по буквам у слові
+		for (auto c : w2) //ГЇГҐГ°ГҐГЎГ®Г° ГЇГ® ГЎГіГЄГўГ Г¬ Гі Г±Г«Г®ГўВі
 		{
-			for (int i : tempStates) //починаємо з кожного початкового стану
+			for (int i : tempStates) //ГЇГ®Г·ГЁГ­Г ВєГ¬Г® Г§ ГЄГ®Г¦Г­Г®ГЈГ® ГЇГ®Г·Г ГІГЄГ®ГўГ®ГЈГ® Г±ГІГ Г­Гі
 			{
-				for (int st : FindStates(i, c))// знаходимо наступні стани через які можна отримати наступний символ і записуємо їх  
+				for (int st : FindStates(i, c)) 
 				{
 					nextTempStates.insert(st);
 				}
 			}
-			tempStates.clear(); // очищуємо початкові стани
+			tempStates.clear(); 
 
-			tempStates.insert(nextTempStates.begin(), nextTempStates.end()); //записуємо в початкові стани наступні стани
+			tempStates.insert(nextTempStates.begin(), nextTempStates.end()); 
 
-			nextTempStates.clear(); // =очищуємо наступні стани
+			nextTempStates.clear();
 		}
 
 		return tempStates;
